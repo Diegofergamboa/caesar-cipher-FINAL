@@ -41,3 +41,19 @@ while should_end == True :
 
   ''' It´s important remenber Diego, that almost all the time that you ll be have a list, you can just uses that method to repeat the patron from a list that is choosen values {the patron of }
   '''
+ 
+message = 'GIEWIVrGMTLIVrHIQS' #encrypted message
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+for key in range(len(LETTERS)):
+   translated = ''
+   for symbol in message:
+      if symbol in LETTERS:
+         num = LETTERS.find(symbol)
+         num = num - key
+         if num < 0:
+            num = num + len(LETTERS)
+         translated = translated + LETTERS[num]
+      else:
+         translated = translated + symbol
+print('Hacking key #%s: %s' % (key, translated))
